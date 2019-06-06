@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            position: relative;
+            overflow: hidden;
+        }
+       /* #demodiv{
+           width: 400px;
+            height: 600px;
+            background-color: cornflowerblue;
+            position: absolute;
+            right: -400px;
+
+        }*/
+       .ul1{
+           list-style-type: none;
+           position: absolute;
+           right: 0px;
+           top:300px;
+       }
+        .tabelli{
+            background-color: gray;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 3px;
+            position: relative;
+
+        }
+        p{
+            width: 100px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+            right: -70px;
+
+        }
+        .active{
+
+            background-color:pink;
+        }
+        .litspan{
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+        }
+        .clear{
+            clear:both;
+
+        }
+        .addcss2{
+            background-color: #999999;
+        }
+        .f{
+            width: 300px;
+            height: 500px;
+            background-color: darkslateblue;
+            position: absolute;
+            right: -300px;
+        }
+
+    </style>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<!--<button onclick="funa()">点我</button>
+<div id="demodiv"></div>-->
+
+   <ul class="ul1">
+       <p>我是内容1</p>
+       <li class="tabelli" ><span class="litspan"></span></li>
+       <p>我是内容2</p>
+       <li class="tabelli" onclick="funa()"><span class="litspan"></span></li>
+
+       <p>我是内容3</p>
+       <li class="tabelli"><span class="litspan"></span></li>
+       <p>我是内容4</p>
+       <li class="tabelli"><span class="litspan"></span></li>
+       <p>我是内容5</p>
+       <li class="tabelli"><span class="litspan"></span></li>
+
+   </ul>  <div class="f"></div>
+<div class="clear"></div>
+
+<script type="text/javascript">
+  /*  var bool=false;
+    function funa(){
+        bool =!bool;
+       if(bool){
+           $("#demodiv").animate({"right":"0"},1000)
+       }else{
+           $("#demodiv").animate({"right":"-400"},1000)
+       }
+    }*/
+
+    $(".tabelli").hover(function(){
+            $(this).stop(true);
+            $(this).addClass("active");
+            $(this).prev().css({"display":"block"});
+            $(this).prev().animate({"right":"30"},300);
+            $(this).prev().removeClass("addcss2");
+    },function(){
+
+        $(this).removeClass("active");
+        $(this).prev().animate({"right":"-70"},300);
+        $(this).prev().addClass("addcss2");
+        /*$(this).prev().css({"backgroundColor":"grey"});*/
+       /* $(this).prev().css({"display":"none"});*/
+  })
+  var bool=false;
+  function funa(){
+      bool =!bool;
+      if(bool){
+          $(".f").animate({"right":"0px"},500);
+          $(".ul1").animate({"right":"300px"},500);
+      }else{
+          $(".f").animate({"right":"-300px"},500);
+          $(".ul1").animate({"right":"0px"},500);
+      }
+  }
+ /* $(".ul1").hover(function(){
+
+      $(this).find("p").css({"display":"block"});
+      $(this).find("p").animate({"right":"30"},500);
+  },function(){
+
+      $(this).find("p").css({"display":"none"});
+      $(this).find("p").animate({"right":"-70"},500);
+  })*/
+</script>
+</body>
+</html>

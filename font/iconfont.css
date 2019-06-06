@@ -1,0 +1,19 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.ttf?t=1532339962494') format('truetype'); 
+}
+
+.icon {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-user:after { content: "\1001"; }
+.icon-cart:after { content: "\1002"; }
+.icon-heart:after { content: "\1003"; }
+.icon-pinglun:after { content: "\1004"; }
+.icon-zixun:after { content: "\1005"; }
+.icon-cart1:after { content: "\1006"; }
+.icon-cart2:after { content: "\1007"; }

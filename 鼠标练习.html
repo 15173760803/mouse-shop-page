@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标啊！</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .con{
+            width: 100%;
+            position: relative;
+        }
+        .top{
+            width: 1200px;
+            margin: 0px auto;
+            background-color: white;
+            height: 100px;
+        }
+        .top-l{
+            float: left;
+            background-color:white;
+            width: 900px;
+            height: 100px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .top-r{
+            float: right;
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            position: relative;
+
+        }
+        .img1{
+           /* position: absolute;*/
+          position: absolute;
+            left: 40px;
+            top: 30px;
+        }
+        #demoinput1{
+         width:300px ;
+          height: 28px;
+          margin-left: 30px;
+            outline: none;
+            border-top: 2px solid red;
+            border-left: 2px solid red;
+            border-bottom: 2px solid red;
+            position: absolute;
+            top:45px;
+            left: 200px;
+        }
+        .btn1{
+            width: 50px;
+            height: 32px;
+           border: none;
+            background-color:red;
+            position: absolute;
+            top:45px;
+            left:510px;
+        }
+        .btn2{
+            width: 100px;
+            height: 31px;
+            border: none;
+            background-color:white;
+            color: red;
+            border: 2px solid red;
+            position: absolute;
+            top: 45px;
+            left: 40px;
+            cursor: pointer;
+        }
+        .clear{
+            clear:both;
+        }
+        .div2{
+            width: 1200px;
+            margin: 0px auto;
+        }
+        .div2-ul{
+            list-style-type: none;
+        }
+        .div2-ul-li{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .div2-ul-li>a{
+            text-decoration: none;
+            color:black;
+            font-size: 16px;
+
+        }
+        .div3{
+            width: 100%;
+            height: 3px;
+            background-color: red;
+        }
+        .addcs1{
+            background-color: red;
+        }
+        .addcs2{
+            border: 2px solid green;
+        }
+        #addcs3{
+            color: white;
+        }
+        .div4{
+            width:1200px;
+            box-sizing: border-box;
+            background-color: lightskyblue;
+            margin: 0px auto;
+
+        }
+        .div4-f{
+            width: 220px;
+            background-color: white;
+            float:left;
+            margin-left:10px;
+            margin-bottom: 15px;
+            border: 2px solid white;
+        }
+        .div4-ul2{
+            list-style-type: none;
+            width: 200px;
+            margin-left: 10px;
+            border: 1px solid darkgrey;
+
+
+        }
+        .div4-li2{
+            display: inline-block;
+
+
+        }
+        .div4-li2>a{
+           text-decoration: none;
+            font-size: 14px;
+           color: #bbbbbb;
+        }
+        .div4-ul1{
+            list-style-type: none;
+            width: 200px;
+            margin-left: 10px;
+
+        }
+        .div4-ul1 a{
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .div4-span{
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+       /* .gun{
+            display: inline-block;
+            width: 1px;
+            height: 30px;
+            background-color: black;
+        }*/
+        .div4-f-b{
+            box-sizing: border-box;
+        }
+        .div4-f-c{
+            width: 220px;
+            box-sizing: border-box;
+            padding-right: 10px;
+        }
+        .demop2{
+            font-size: 20px;
+            margin-left: 10px;
+            color: red;
+        }
+        .g{
+            width: 700px;
+            height: 700px;
+            background-color: red;
+        }
+        .div4-li1{
+            height: 70px;
+        }
+        #addcs4{
+            color: red;
+        }
+        .div4-fadd{
+            border: 1px solid grey;
+        }
+        .ul1{
+            list-style-type: none;
+            position: absolute;
+            right: 0px;
+            top:300px;
+            position: fixed;
+        }
+        .tabelli{
+            background-color: gray;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 3px;
+            position: relative;
+
+        }
+        .demop{
+            width: 100px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+            right: -70px;
+            text-align: center;
+            line-height: 30px;
+            display: none;
+        }
+        .active{
+
+            background-color:pink;
+        }
+        .litspan{
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+        }
+        #litspan2{
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+        }
+        .addcss2{
+            background-color: #999999;
+        }
+        .div6{
+            height: 600px;
+            width: 400px;
+            background-color: #1E90FF;
+            position: absolute;
+            right: 0px;
+            top: 300px;
+        }
+        body{
+            position: relative;
+        }
+        .addQQ{
+
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            left: 20px;
+            display:none;
+
+        }
+        .QQ{
+            position: relative;
+        }
+        .f{
+            width: 300px;
+            height: 100%;
+            background-color:white;
+            position: absolute;
+            right: -300px;
+            top:0px;
+            position: fixed;
+            border-left: 3px solid grey;
+
+        }
+        .topalert{
+            width:400px;
+            height: 50px;
+            border: 1px solid darkgrey;
+            position:absolute;
+            right:370px;
+            top:75px;
+            text-align: center;
+            color: grey;
+            line-height: 50px;
+            display: none;
+            box-shadow: 0 0px 5px pink;
+        }
+    </style>
+</head>
+<body>
+<div class="con">
+    <div class="top">
+      <!--  <div class="top-l">
+            <img src="img/logo.png" alt="" class="img1"/>
+            <input type="text" id="demoinput1" placeholder="请输入······"/><button class="btn1">搜索</button>
+            <div class="clear"></div>
+        </div>
+        <div class="top-r">
+            <button class="btn2">我的购物车</button>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>-->
+
+    </div>
+    <div class="topalert"><p>购物车里还没有东西，赶快去添加吧！</p></div>
+    <div class="div2">
+        <ul class="div2-ul">
+            <li class="div2-ul-li"><a href="#">全部商品分类</a></li>
+            <li class="div2-ul-li"><a href="#">京东服饰</a></li>
+            <li class="div2-ul-li"><a href="#">美妆馆</a></li>
+            <li class="div2-ul-li"><a href="#">超市</a></li>
+            <li class="div2-ul-li"><a href="#">生鲜</a></li>
+            <li class="div2-ul-li"><a href="#">全球购</a></li>
+        </ul>
+    </div>
+    <div class="div3"></div>
+    <div class="div4">
+    <!--    <div class="div4-f">
+
+            <div  class="div4-f-t">
+                <img src="img/001.jpg" alt=""/>
+            </div>
+            <div class="div4-f-c">
+                <p>￥99</p>
+                <ul class="div4-ul1"><li class="div4-li1"><a href="#">小米（MI）小米便携鼠标 深空灰 无线蓝牙4.0 男女生家用 笔记本电脑办公</a></li></ul>
+                <span class="div4-span">小米京东官方自营旗舰店</span>
+            </div>
+            <div class="div4-f-b">
+                <ul class="div4-ul2">
+                    <li class="div4-li2"  style="border-right: 1px solid darkgrey; width:50px;text-align: center" ><a href="#">对比</a></li>
+
+                    <li class="div4-li2" style="border-right: 1px solid darkgrey; width:50px;text-align: center" ><a href="#">关注</a></li>
+
+                    <li class="div4-li2"><a href="#">加入购物车</a></li>
+                </ul>
+            </div>
+        </div>-->
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div class="div5">
+     <ul class="ul1">
+         <p class="demop">我是内容1</p>
+         <li class="tabelli" ><span class="litspan"></span></li>
+         <p class="demop">我是内容2</p>
+         <li class="tabelli" onclick="funa()"><span id="litspan2"></span></li>
+         <p class="demop" >我是内容3</p>
+         <li class="tabelli"><span class="litspan"></span></li>
+       <!--  <div class="div6"></div>-->
+         <p class="demop">我是内容4</p>
+         <li class="tabelli"><span class="litspan"></span></li>
+         <p class="demop">我是内容5</p>
+         <li class="tabelli"><span class="litspan"></span></li>
+
+     </ul>
+        <div class="f"></div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $.ajax({
+        url:"data.json",
+        type:"get",
+        dataType:"json",
+        success:function(e){
+            /*顶部top数据和样式*/
+            var newtop= e.jtop;
+            console.log(newtop);
+              for(var i=0;i<newtop.length;i++){
+                $(".top").html("<div class='top-l'><img src='"+newtop[i].img+"'  class='img1'/><input type='text' id='demoinput1' placeholder='请输入······'/><button class='btn1'>"+newtop[i].btna+"</button><div class='clear'></div></div> <div class='top-r'> <button class='btn2'>"+newtop[i].btnb+"</button><div class='clear'></div></div> <div class='clear'></div>");
+
+              }
+
+            /* 中间图像*/
+            var newshopname= e.shopname;
+            console.log(newshopname);
+            var newHtml="";
+            for(var x=0;x<newshopname.length;x++){
+               /* newHtml+="<div class='div4-f'> <div  class='div4-f-t'> <img src='"+newshopname[x].img+"' /></div>  <div class='div4-f-c'><p>"+newshopname[x].number+"</p><ul class='div4-ul1'><li class='div4-li1'><a href='#'>"+newshopname[x].tittle1+"</a></li></ul><span class='div4-span'>"+newshopname[x].tittle2+"</span></div>  <div class='div4-f-b'> <ul class='div4-ul2'> <li class='div4-li2'  style='border-right: 1px solid darkgrey; width:50px;text-align: center'><a href='#'>对比</a></li><li class='div4-li2 style='border-right: 1px solid darkgrey; width:50px;text-align: center' ><a href='#'>关注</a></li> <li class='div4-li2'><a href='#'>加入购物车</a></li></ul></div></div><div class='clear'></div>";*/
+                /*newHtml +="<div class='div4-f'> <div  class='div4-f-t'> <img src='"+newshopname[x].img+"' /></div><div class='div4-f-c'><p>"+newshopname[x].number+"</p><ul class='div4-ul1'><li class='div4-li1'><a href='#'>"+newshopname[x].tittle1+"</a></li></ul><span class='div4-span'>"+newshopname[x].tittle2+"</span></div> <div class='div4-f-b'> <ul class='div4-ul2'> <li class='div4-li2'  style='border-right: 1px solid darkgrey; width:50px;text-align: center'><a href='#'>对比</a></li><li class='div4-li2' style='border-right: 1px solid darkgrey; width:50px;text-align: center' ><a href='#'>关注</a></li> <li class='div4-li2' style='text-align: center; width: 87px' ><a href='#'>加入购物车</a></li></ul></div></div>";*/
+                $(".div4").append("<div class='div4-f'> <div  class='div4-f-t'> <img src='"+newshopname[x].img+"' /></div><div class='div4-f-c'><p class='demop2'>"+newshopname[x].number+"</p><ul class='div4-ul1'><li class='div4-li1'><a href='#'>"+newshopname[x].tittle1+"</a></li></ul><span class='div4-span'>"+newshopname[x].tittle2+"</span></div> <div class='div4-f-b'> <ul class='div4-ul2'> <li class='div4-li2'  style='border-right: 1px solid darkgrey; width:50px;text-align: center'><a href='#'>对比</a></li><li class='div4-li2' style='border-right: 1px solid darkgrey; width:50px;text-align: center' ><a href='#'>关注</a></li> <li class='div4-li2 QQ' style='text-align: center; width: 87px'  ><span class='addQQ'></span><a href='#'>加入购物车</a></li></ul></div></div>");
+               /* $(".div4-f").html(" <div  class='div4-f-t'> <img src='"+newshopname[x].img+"' /></div>  <div class='div4-f-c'><p>"+newshopname[x].number+"</p><ul class='div4-ul1'><li class='div4-li1'><a href='#'>"+newshopname[x].tittle1+"</a></li></ul><span class='div4-span'>"+newshopname[x].tittle2+"</span></div>  <div class='div4-f-b'> <ul class='div4-ul2'> <li class='div4-li2'  style='border-right: 1px solid darkgrey; width:50px;text-align: center'><a href='#'>对比</a></li><li class='div4-li2 style='border-right: 1px solid darkgrey; width:50px;text-align: center' ><a href='#'>关注</a></li> <li class='div4-li2'><a href='#'>加入购物车</a></li></ul></div><div class='clear'></div>");*/
+
+            }
+           /*document.getElementsByClassName("div4")[0].innerHTML=newHtml;*/
+            $(".div4-li2").hover(function(){
+                $(this).find("a").attr("id","addcs4");
+            },function(){
+                $(this).find("a").removeAttr("id","addcs4");
+            })
+
+            $(".div4-f").hover(function(){
+                $(this).css("border","2px solid pink");
+            },function(){
+                $(this).css("border","2px solid white");
+            })
+
+//            购物车小球的显示和隐藏
+//            var bool=false;   //假
+            $(".QQ").on("click",function(){
+                /*  console.log("aaaaaaaa")*/
+//                bool=!bool;  //真
+//                if(bool){
+                    $(this).find(".addQQ").css("display","block");
+//                    $(this).find(".addQQ").animate({"left":"1051px","top":"-900px"},2000)
+//                }else{
+//                    $(this).find(".addQQ").css("display","none");
+//                }
+
+            })
+
+
+            $(".btn2").hover(function(){
+//        $(".topalert").css("color","red");
+                $(".topalert").show();
+            },function(){
+                $(".topalert").hide();
+            })
+
+
+//    获取购物车位置
+            document.getElementById("litspan2").addEventListener("click",function(event){
+                console.log(event);
+                var carX=event.clientX;
+                var carY=event.clientY;
+
+            })
+
+        }
+
+
+
+    })
+
+    $(".div2-ul-li").hover(function(){
+        $(this).addClass("addcs1 addcs2");
+        $(this).find("a").attr("id","addcs3");
+
+
+    },function(){
+        $(this).removeClass("addcs1 addcs2");
+        $(this).find("a").removeAttr("id","fuddcs3");
+    })
+    $(".tabelli").hover(function(){
+        $(this).stop(true);
+        $(this).addClass("active");
+        $(this).prev().css({"display":"block"});
+        $(this).prev().animate({"right":"30"},300);
+        $(this).prev().removeClass("addcss2");
+    },function(){
+
+        $(this).removeClass("active");
+        $(this).prev().animate({"right":"-70"},300);
+        $(this).prev().addClass("addcss2");
+
+        /*$(this).prev().css({"backgroundColor":"grey"});*/
+        /* $(this).prev().css({"display":"none"});*/
+    })
+
+    var bool2=false;
+    function funa(){
+        bool2 =!bool2;
+        if(bool2){
+            $(".f").animate({"right":"0px"},500);
+            $(".ul1").animate({"right":"300px"},500);
+             $(".demop").css({"display":"none"});
+        }else{
+            $(".f").animate({"right":"-300px"},500);
+            $(".ul1").animate({"right":"0px"},500);
+        }
+    }
+    $(".btn2").hover(function(){
+//        $(".topalert").css("color","red");
+        $(".topalert").show();
+    },function(){
+        $(".topalert").hide();
+    })
+
+
+
+</script>
+</body>
+</html>
